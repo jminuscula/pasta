@@ -1,0 +1,89 @@
+@import "../lib/bootstrap/less/bootstrap.less";
+
+main {}
+
+*::selection{
+    background: transparent;
+}
+
+#cards{
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 @grid-gutter-width / 2;
+}
+
+@card-unit: 200px;
+@card-unit-ft: 40px;
+
+.card {
+    width: 100%;
+    height: @card-unit + @card-unit-ft + (@grid-gutter-width / 2);
+    overflow: hidden;
+
+    @media (min-width: @screen-sm-min){
+        width: 50%;
+        &.s2, &.x2,
+        &.s3, &.x3 { width: 100%; }
+    }
+    @media (min-width: @screen-md-min){
+        width: 33.3333334%;
+        &.s2, &.x2,
+        &.s3, &.x3 { width: 66.666667%; }
+    }
+    @media (min-width: @screen-lg-min){
+        width: 16.6666667%;
+        &.s2, &.x2 { width: 33.3333334%; }
+        &.s3, &.x3 { width: 50%; }
+    }
+
+    &.s2, &.y2 {
+        height: (@card-unit * 2) + (@grid-gutter-width * 2) + 25px + @card-unit-ft;
+        .card-content {
+            height: @card-unit * 2 + @grid-gutter-width * 2 + 10px;
+        }
+    }
+
+    &.s3, &.y3 {
+        height: (@card-unit * 3) + (@grid-gutter-width * 3) + 65px + @card-unit-ft;
+        .card-content {
+            height: @card-unit * 3 + @grid-gutter-width * 3 + 50px;
+        }
+    }
+
+    // box-sizing: border-box;
+    padding: @grid-gutter-width / 2;
+    margin-bottom: @grid-gutter-width / 2;
+}
+
+.card-content{
+    width: 100%;
+    height: @card-unit;
+    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 15px;
+
+    background: #181818;
+    color: #CDA869;
+    font-family: 'Menlo', 'Monaco', 'Droid Sans', 'Consolas', sans-serif;
+    font-size: 16px;
+}
+
+.card-content *::selection{
+    background: #cccdce;
+}
+
+.card-footer {
+    height: @card-unit-ft;
+    overflow: hidden;
+    background: #dfdfdf;
+}
+
+.card-actions {
+    padding: 0.5em;
+    list-style-type: none;
+    
+    li {
+        display: inline-block;
+    }
+}
