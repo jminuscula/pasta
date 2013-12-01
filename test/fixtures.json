@@ -1,0 +1,42 @@
+[
+    {
+        "id": "7f548514181cd2e1fff4d39e2f000247",
+        "key": null,
+        "value": {
+            "_id": "7f548514181cd2e1fff4d39e2f000247",
+            "_rev": "3-ec1579d74a45327bd7b100f3ccb01879",
+            "body": "mecle mecle dos",
+            "date": "'2013-11-30T14:00:00'",
+            "pos": 1,
+            "tags": "uno,tag,otra",
+            "type": "note"
+        }
+    },
+    {
+        "id": "eb9aa19fb4f1f486d76dde5b8f000576",
+        "key": null,
+        "value": {
+            "_id": "eb9aa19fb4f1f486d76dde5b8f000576",
+            "_rev": "2-22127e9ac7cf1cf8755e650ece0dcc26",
+            "body": "otra nota con otro contenido",
+            "date": "2013-11-30T15:45:00",
+            "pos": null,
+            "tags": "dos,tag,otra",
+            "type": "note"
+        }
+    },
+    {
+        "id": "eb9aa19fb4f1f486d76dde5b8f000922",
+        "key": null,
+        "value": {
+            "_id": "eb9aa19fb4f1f486d76dde5b8f000922",
+            "_rev": "3-9ee65bc616fe3b607e7723d09e212aa3",
+            "body": "arbitrary text from stdin",
+            "date": "2013-11-30T16:00:00",
+            "pos": 3,
+            "size": "s2",
+            "tags": "tres,tag,otra",
+            "type": "note"
+        }
+    }
+]

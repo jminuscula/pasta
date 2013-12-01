@@ -41,6 +41,23 @@ class web {
       www_root => '/opt/pasta/app/'
     }
 
+    nginx::resource::location{'pasta.local/pasta/':
+      vhost => 'pasta.local',
+      proxy => 'http://localhost:5984',
+      www_root => 'pasta',
+    }
+
+    # Reverse proxy for couchdb
+    nginx::resource::upstream{'couchdb':
+      ensure => present,
+      members => ['localhost:5984']
+    }
+
+    nginx::resource::vhost{'db.pasta.local':
+      ensure => present,
+      proxy => 'http://couchdb'
+    }
+
     exec {'nginx_sendfile_off':
       provider => shell,
       command => "sed -i -r 's/sendfile\\s+on/sendfile\\ off/' /etc/nginx/nginx.conf",
